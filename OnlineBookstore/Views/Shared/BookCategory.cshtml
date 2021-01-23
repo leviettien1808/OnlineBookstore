@@ -1,0 +1,7 @@
+﻿@model IEnumerable<OnlineBookstore.Models.Categories>
+@foreach (var item in Model)
+{
+    <li class="has-submenu">
+        <a href="/san-pham/@item.SeoUrl-@item.Id">@item.Name</a>
+    </li>
+}

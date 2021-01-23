@@ -1,0 +1,273 @@
+﻿<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="/Assets/Admin/index3.html" class="brand-link">
+        <img src="/Assets/Admin/dist/img/AdminLTELogo.png"
+             alt="AdminLTE Logo"
+             class="brand-image img-circle elevation-3"
+             style="opacity: .8">
+        <span class="brand-text font-weight-light">AdminLTE 3</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="/Assets/Admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">Alexander Pierce</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+    with font-awesome or any other icon font library -->
+                @*Home*@
+                <li class="nav-item has-treeview">
+                    <a href="@Url.Action("Index", "Home")" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Trang chủ</p>
+                    </a>
+                </li>
+                @*General Management*@
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            Quản lý chung
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "About")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Giới thiệu</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Feedback")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Phản hồi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Slide")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Slide</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "MenuType")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh mục menu</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Menu")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Menu</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Footer")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Footer</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @*Configuration Management*@
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Quản lý cấu hình
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Slide")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Slide</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "MenuType")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Kiểu menu</p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    Menu
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Index", "Menu")" class="nav-link">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>Danh sách menu</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Create", "Menu")" class="nav-link">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>Thêm mới menu</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Trash", "Menu")" class="nav-link">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>Thùng rác</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Footer")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Footer</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @*News*@
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-newspaper"></i>
+                        <p>
+                            Tin tức
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Topic")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Chủ đề bài viết</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Article")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Bài viết</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Tag")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Nhãn bài viết</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @*Book*@
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            Sách
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Book")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh sách sách</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Create", "Book")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thêm sách</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Trash", "Book")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thùng rác</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @*Category*@
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>
+                            Danh mục sách
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Category")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh sách danh mục</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Create", "Category")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thêm danh mục</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Trash", "Category")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thùng rác</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @*User*@
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-user-alt"></i>
+                        <p>
+                            Người dùng
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "User")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh sách người dùng</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Create", "User")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thêm người dùng</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Trash", "User")" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thùng rác</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="@Url.Action("SignOut", "Accounts")" class="nav-link bg-danger">
+                        <i class="nav-icon fas fa-sign-out-alt"></i>
+                        <p>Đăng xuất</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

@@ -1,0 +1,95 @@
+﻿@model OnlineBookstore.Models.Footers
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section contentHeader {
+    Quản lý Footer
+}
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Default box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Quản lý Footer</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Id)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Content)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => modelItem.Id)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => modelItem.Content)
+                                    </td>
+                                    <td class="text-right py-0 align-middle">
+                                        <div class="btn-group btn-group-sm">
+                                            @if (Model.Status == 1)
+                                            {
+                                                <a class="btn btn-sm btn-light text-success border a33" href="@Url.Action("Status", "Footer", new { id = Model.Id })"> <i class="fas fa-toggle-on"></i> </a>
+                                            }
+                                            else
+                                            {
+                                                <a class="btn btn-sm btn-light text-danger border a33" href="@Url.Action("Status", "Footer", new { id = Model.Id })"> <i class="fas fa-toggle-off"></i> </a>
+                                            }
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            
+                            <tfoot>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Id)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Content)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        Footer
+                    </div>
+                    <!-- /.card-footer-->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

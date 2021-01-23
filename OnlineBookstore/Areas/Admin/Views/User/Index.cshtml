@@ -1,0 +1,172 @@
+﻿@model IEnumerable<OnlineBookstore.Models.Users>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section css {
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/Assets/Admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/Assets/Admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/Assets/Admin/dist/css/adminlte.min.css">
+}
+
+@section contentHeader {
+    Danh sách người dùng
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Default box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Danh sách người dùng</h3>
+
+                        <span>@ViewBag.Message</span>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table id="#example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Id)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.FullName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Username)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Authorization)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.CreatedDate)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    int? authentication = item.Authorization;
+                                    string admin = "Quản trị viên";
+                                    string customer = "Khách hàng";
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FullName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Username)
+                                    </td>
+                                    <td>
+                                        @if (authentication == 1)
+                                        {
+                                            @admin
+                                        }
+                                        else
+                                        {
+                                            @customer
+                                        }
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                                    </td>
+                                    <td class="text-right py-0 align-middle">
+                                        <div class="btn-group btn-group-sm">
+                                            @if (item.Status == 1)
+                                            {
+                                                <a class="btn btn-sm btn-light text-success border a33" href="@Url.Action("Status", "User", new { id = item.Id })"> <i class="fas fa-toggle-on"></i> </a>
+                                            }
+                                            else
+                                            {
+                                                <a class="btn btn-sm btn-light text-danger border a33" href="@Url.Action("Status", "User", new { id = item.Id })"> <i class="fas fa-toggle-off"></i> </a>
+                                            }
+                                            <a href="@Url.Action("Update", "User", new { id = item.Id })" class="btn btn-info"><i class="fas fa-eye"></i></a>
+                                            <a href="@Url.Action("Delete", "User", new { id = item.Id })" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+
+                            <tfoot>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Id)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.FullName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Username)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Authorization)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.CreatedDate)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        Footer
+                    </div>
+                    <!-- /.card-footer-->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<!-- page script -->
+@section scripts {
+    <!-- DataTables -->
+    <script src="/Assets/Admin/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/Assets/Admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/Assets/Admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/Assets/Admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true,
+                "autoWidth": false,
+            });
+        });
+    </script>
+}
